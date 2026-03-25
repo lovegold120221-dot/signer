@@ -70,14 +70,14 @@
         .glass-panel {
             background: rgba(255, 255, 255, 0.02);
             border: 1px solid rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
+            backdrop-filter: blur(16px);
         }
 
         /* Gradient Text */
         .text-gradient {
-            background-clip: text;
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
             background-image: linear-gradient(to right, #2dd4bf, #3b82f6);
         }
@@ -95,6 +95,19 @@
 
         .hero-image:hover {
             transform: rotateX(0deg) scale(1.02);
+        }
+
+        /* Animation delay utility classes */
+        .anim-delay-100 {
+            animation-delay: 100ms;
+        }
+
+        .anim-delay-200 {
+            animation-delay: 200ms;
+        }
+
+        .anim-delay-300 {
+            animation-delay: 300ms;
         }
     </style>
 </head>
@@ -240,11 +253,11 @@
                                     class="absolute bottom-10 left-1/2 transform -translate-x-1/2 glass-panel px-6 py-3 rounded-full border border-white/10 flex items-center gap-4 z-20">
                                     <div class="flex gap-1 items-end h-4">
                                         <div class="w-1 bg-eburon-400 h-2 animate-pulse"></div>
-                                        <div class="w-1 bg-eburon-400 h-4 animate-pulse" style="animation-delay: 100ms">
+                                        <div class="w-1 bg-eburon-400 h-4 animate-pulse anim-delay-100">
                                         </div>
-                                        <div class="w-1 bg-eburon-400 h-3 animate-pulse" style="animation-delay: 200ms">
+                                        <div class="w-1 bg-eburon-400 h-3 animate-pulse anim-delay-200">
                                         </div>
-                                        <div class="w-1 bg-eburon-400 h-1 animate-pulse" style="animation-delay: 300ms">
+                                        <div class="w-1 bg-eburon-400 h-1 animate-pulse anim-delay-300">
                                         </div>
                                     </div>
                                     <span class="text-sm font-medium text-white">Synthesizing VGT Motion...</span>
@@ -327,7 +340,7 @@
                                 <div class="relative">
                                     <input type="text" placeholder="Type Dutch to generate VGT..."
                                         class="w-full bg-black border border-white/10 rounded-lg pl-4 pr-10 py-3 text-sm text-white focus:outline-none focus:border-eburon-500/50 transition">
-                                    <button
+                                    <button title="Send message"
                                         class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-eburon-400 transition">
                                         <i class="fas fa-paper-plane"></i>
                                     </button>
