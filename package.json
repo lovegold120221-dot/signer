@@ -1,6 +1,7 @@
 {
   "name": "@sign/translate",
   "version": "0.0.4",
+  "main": "index.js",
   "scripts": {
     "ng": "ng",
     "lint": "NODE_OPTIONS=--max_old_space_size=16384 ng lint",
@@ -26,7 +27,10 @@
     "generate:licenses": "npm-license-crawler --json dist/sign-translate/browser/licenses.json --onlyDirectDependencies --exclude ios --exclude android --exclude dist --exclude functions",
     "generate:docs": "cd docs && npm run docs:build && mv .vitepress/dist ../dist/sign-translate/browser/docs",
     "build:full": "npm run generate:terms && npm run generate:privacy && npm run build && npm run generate:sitemap && npm run generate:licenses && npm run generate:docs",
-    "serve:ssr:sign-translate": "node dist/sign-translate/server/server.mjs"
+    "serve:ssr:sign-translate": "node dist/sign-translate/server/server.mjs",
+    "electron:build": "npm run build && electron-builder --mac --dir",
+    "electron:dist": "npm run build && electron-builder --mac",
+    "electron:dir": "electron-builder --mac --dir"
   },
   "engines": {
     "node": ">=18",
@@ -138,6 +142,8 @@
     "browser-sync": "3.0.4",
     "deepmerge": "4.3.1",
     "dotenv": "17.2.3",
+    "electron": "^41.0.4",
+    "electron-builder": "^26.8.1",
     "eslint": "9.39.2",
     "fuzzy": "0.1.3",
     "husky": "9.1.7",
@@ -168,5 +174,41 @@
     "typescript": "5.9.3",
     "webpack-bundle-analyzer": "5.1.0",
     "zod": "4.2.1"
+  },
+  "build": {
+    "appId": "mt.sign.translate",
+    "productName": "Sign Translate",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "index.js",
+      "package.json"
+    ],
+    "mac": {
+      "category": "public.app-category.productivity",
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "icon": "src/assets/icons/logo.png"
+    },
+    "dmg": {
+      "title": "Sign Translate",
+      "contents": [
+        {
+          "x": 130,
+          "y": 220
+        },
+        {
+          "x": 410,
+          "y": 220,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    }
   }
 }
