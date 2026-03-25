@@ -15,18 +15,18 @@ export const environment = {
   },
   reCAPTCHAKey: '6Ldsxb8oAAAAAGyUZbyd0QruivPSudqAWFygR-4t',
   translationApi: {
-    textNormalizationUrl: 'https://api.eburon.ai/text-normalization',
-    signWritingDescriptionUrl: 'https://api.eburon.ai/signwriting-description',
-    spokenTextToSignWritingUrl: 'https://api.eburon.ai/spoken-text-to-signwriting',
-    spokenTextToSignedPoseUrl: 'https://api.eburon.ai/spoken-text-to-signed-pose',
-    spokenTextToSignedVideoUrl: 'https://api.eburon.ai/spoken-text-to-signed-video',
-    imageToAvatarUrl: 'https://api.eburon.ai/image-to-avatar/',
+    textNormalizationUrl: 'http://localhost:3000/text-normalization',
+    signWritingDescriptionUrl: 'http://localhost:3000/signwriting-description',
+    spokenTextToSignWritingUrl: 'http://localhost:3000/spoken-text-to-signwriting',
+    spokenTextToSignedPoseUrl: 'http://localhost:3000/spoken-text-to-signed-pose',
+    spokenTextToSignedVideoUrl: 'http://localhost:3000/spoken-text-to-signed-video',
+    imageToAvatarUrl: 'http://localhost:3000/image-to-avatar/',
   },
   signedLanguageBackends: {
     vgt: {
-      spokenTextToSignedPoseUrl: 'https://api.eburon.ai/spoken-text-to-signed-pose',
-      spokenTextToSignedVideoUrl: 'https://api.eburon.ai/spoken-text-to-signed-video',
-      imageToAvatarUrl: 'https://api.eburon.ai/image-to-avatar/',
+      spokenTextToSignedPoseUrl: 'http://localhost:3000/spoken-text-to-signed-pose',
+      spokenTextToSignedVideoUrl: 'http://localhost:3000/spoken-text-to-signed-video',
+      imageToAvatarUrl: 'http://localhost:3000/image-to-avatar/',
     },
   },
 };
